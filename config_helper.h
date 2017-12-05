@@ -1,3 +1,6 @@
+#ifndef __CONFIG_HELPER__H
+#define __CONFIG_HELPER__H
+
 #include "lib_acl.h"
 
 class config_helper{
@@ -28,4 +31,4 @@ private:
 
 };
 
-
+#endif 
