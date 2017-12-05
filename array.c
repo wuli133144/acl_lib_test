@@ -3,6 +3,8 @@
 
 int main(void){
       	
+
+      #if 0
    	ACL_ARRAY *a=acl_array_create(20);
        	int data=12;
        
@@ -23,6 +25,23 @@ int main(void){
 	
          printf(">>>[info] %s %d",__FILE__,__LINE__);
          printf(">>>[info] %s %d",__FILE__,__LINE__);
-	
+	#endif
+
+        #if 1 
+        ACL_STACK *a=acl_stack_create(20);
+	int data=12;
+	acl_stack_append(a,&data);
+	acl_stack_append(a,&data);
+	acl_stack_append(a,&data);
+
+	acl_stack_append(a,&data);
+       
+	ACL_ITER iter;
+	//stack_iter_head(&iter,&a);
+	acl_foreach(iter,a){
+		  printf(">>>%d\n",*((int*)(iter.data)));
+	}
+         #endif 
+
 	return  0;
 }
