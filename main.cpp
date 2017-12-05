@@ -25,14 +25,17 @@ int main(void ){
  
  size=acl_xinetd_cfg_size(cfg);
  printf("size =%d",size);
-
-char *name;
-char *value;
- for(int i=0;i<size;i++) {
-      acl_xinetd_cfg_index(cfg,i,&name,&value);
-      printf("name %s value %s",name,value);
-}
- 
+ char *name;
+ char *value;
+ for(int i=0;i<size;i++){
+	  acl_xinetd_cfg_index(cfg,i,&name,&value);
+	  printf("name %s value %s\n",name,value);
+	  
+	  printf("ip value %s\r\n",acl_xinetd_cfg_get(cfg,"ip"));
+	  printf("port  value %s\r\n",acl_xinetd_cfg_get(cfg,"port"));
+	 
+ }
+ acl_xinetd_cfg_free(cfg);
  
  
 
